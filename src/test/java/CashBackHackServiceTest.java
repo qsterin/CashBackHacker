@@ -1,51 +1,50 @@
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashBackHackServiceTest {
-
     @Test
-    void OverAThousand() {
+    public void OverAThousand() {
         int amount = 1850;
         int expected = 150;
         CashBackHackService service = new CashBackHackService();
         int actual = service.remain(amount);
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void Thousand() {
+    public void Thousand() {
         int amount = 1000;
         int expected = 0;
         CashBackHackService service = new CashBackHackService();
         int actual = service.remain(amount);
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void LessThanAThousand() {
+    public void LessThanAThousand() {
         int amount = 851;
         int expected = 149;
         CashBackHackService service = new CashBackHackService();
         int actual = service.remain(amount);
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void Null() {
+    public void Null() {
         int amount = 0;
         int expected = 1000;
         CashBackHackService service = new CashBackHackService();
         int actual = service.remain(amount);
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void One() {
+    public void One() {
         int amount = 999;
         int expected = 1;
         CashBackHackService service = new CashBackHackService();
         int actual = service.remain(amount);
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 }
